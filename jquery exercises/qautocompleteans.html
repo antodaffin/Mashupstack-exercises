@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+         rel = "stylesheet">
+      <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+      <script type="text/javascript">
+      	$(document).ready(function(){
+          var country=["america","australia","brazil","belgium","china","colombia","egypt","france","germany","greece","india","indonesia","israel","italy"];
+          $("#auto").autocomplete({
+          	source:country,
+          	autoFocus:true,
+          	minLength:1
+          });
+      	});
+
+      </script>
+</head>
+<body>
+	<h1>autocomplete.....</h1>
+	<h2>select the country</h2>
+	<label>country</label>
+	<input type="text" name="" id="auto"> 
+
+</body>
+</html>

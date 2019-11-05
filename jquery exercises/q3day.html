@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			
+			$("#btn").click(function(){
+				var x=new Date();
+				var y=x.getDay();
+			   if(y % 2==0){
+			   		$("#in").text("it is an even day");
+			   	$("#in").css("color", "green");
+			   }
+		     else{
+		     		$("#in").text("it is an odd day");
+		     		$("#in").css("color", "red");
+		     }   
+			});
+		});	
+		
+		
+		
+      
+	</script>
+</head>
+<body>
+	<h1>display day....</h1>
+	<button id="btn">click me</button>
+	<p id="in"></p>
+
+</body>
+</html>

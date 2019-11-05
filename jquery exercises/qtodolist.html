@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#btn").click(function(){
+				
+
+				var itemadd=$("input[name=listitem]").val();
+				$("ol").append( "<li>"+"<input class='checkbox' type='checkbox'><span>" +itemadd+"</span><a class='remove'>x</a><hr>" +"</li>");
+                      
+      
+				 $("#count").text("total items:"+ $("li").length);
+                       $("#listitem").val("");
+				  });
+
+				  //$("#listitem").keydown(function(e) {
+                        //if (e.which == 13)
+                        //  addItem();
+ 
+			
+			//});
+				  
+				  
+           
+			
+			
+          
+$("#btn").click(function(){
+
+	$("#check").html(" click the checkbox to complete the list items....");
+	
+});
+    
+
+  
+
+		
+ $(document).on('click', '.remove', function()
+
+  {
+
+    $(this).parent().remove();
+
+     //$("#count").text("total items:"+ $("#list-items").children().length);
+     $("#count").text("total items:"+ $("li").length);
+     var strikelength= $('.strike').length;
+ 	     $("#countcomplete").text("total completed items:"+strikelength);
+
+   
+
+  });
+// $(document).on('click','#btn', function(){
+//var countlist=$('#list-items').children();
+
+
+ //$("#count").html("total items:"+countlist);
+ //});
+ 
+
+ $(document).on('click','.checkbox', function(){
+
+ 	// if($(this).is(":checked")){
+ 	$(this).next().addClass('strike');
+ 	 var countstrike=$("li span").hasClass('strike');
+ 	 //alert("kk");
+ 	// var strikecount=countstrike.length;
+ 	// $("#countcomplete").text(strikecount);
+ 	     var strikelength= $('.strike').length;
+ 	     $("#countcomplete").text("total completed items:"+strikelength);
+ 	   // $("#countcomplete").text("total completed items:"+$('.strike').length);
+ 	     
+ 	     	//var notstrike=$("li").not('.strike');
+ 	     	//var notstrike=$("li span").not('.strike');
+ 	     //var outnotstrike=notstrike.length;
+ 	     
+
+ 	     	$("#outputnotstrike").html("pending items:"+$("li span").not('.strike').length);
+ 	  
+
+
+
+
+
+ // }
+
+} );
+ $("#listitem").on('keypress',function(e) {
+    if(e.which == 13) {
+        var itemadd=$("input[name=listitem]").val();
+				$("ol").append( "<li>"+"<input class='checkbox' type='checkbox'><span>" +itemadd+"</span><a class='remove'>x</a><hr>" +"</li>");
+
+				 $("#count").text("total items:"+ $("li").length);
+                       $("#listitem").val("");
+    }
+});
+
+
+ 
+
+  
+  	
+
+});
+
+			
+		
+	</script>
+
+	<style type="text/css">
+		#box{
+			height:500px;
+			width:500px;
+			background: white;
+			margin-left:300px;
+			border:1px solid black;
+			box-sizing: border-box;
+			padding:100px;
+		}
+		#btn{
+			background: grey;
+			color:white;
+			cursor: pointer;
+			border:none;
+			height:40px;
+			width:40px;
+
+
+		}
+		input[type="text"]{
+			height:40px;
+			width:250px;
+		}li{
+			cursor: pointer;
+			list-style-type: none;
+		}
+		.remove{
+			float:right;
+		}
+		.strike{
+		text-decoration: line-through;
+		}
+		
+		
+	</style>
+</head>
+<body>
+	<h1>todo list...</h1>
+	<div id="box" >
+        
+		<input type="text"  name="listitem" id="listitem" placeholder="enter the items to add.." autofocus>
+		<button id="btn">add</button>
+		<!-- <button class="edit">edit</button> -->
+		<p style="color:red;font-size:25px;" id="check"></p>
+		<ol id="list-items">
+		
+		</ol>
+		<p id="count"></p>
+	    <p id="countcomplete"></p>
+	    <p id="totalitem"></p>
+	    <p id="outputnotstrike"></p>
+	</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

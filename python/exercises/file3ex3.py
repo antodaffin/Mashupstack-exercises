@@ -1,0 +1,5 @@
+f=open("my.txt", "a")
+f.write("daffin")
+f.close()
+f=open("my.txt", "r")
+print(f.read())

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+           
+           function myfunction(msg){
+           	var arr=[];
+           	arr.push(msg);
+           	for(i in arr)
+           		console.log(arr[i]);
+           		
+
+
+           }
+           myfunction();
+
+
+
+
+
+			$("#myform").submit(function(f){
+				f.preventDefault();
+              var text=$("#in1").val();
+              $("#output").html(text);
+              myfunction(text);
+
+			});
+		});
+			
+	</script>
+</head>
+<body>
+<h1>enter the input and check it in the console...</h1>
+<form id="myform">
+<input type="text" name="" id="in1">
+<input type="submit" name="" >
+<p id="output"></p>
+</form>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+   $(document).ready(function(){
+      $("#btn").click(function(e){
+        e.preventDefault();
+      
+     
+     var foname=$("#fname").val();
+     var foemail=$("#mail").val();
+     var fopass1=$("#pass").val();
+     var fopass2=$("#repass").val();
+     if(foname==""|| foname=="null"){
+      $("#name").html("please enter the name");
+      $("#name").css("color","red");
+    $("#fname").css({ "border":"1px solid red","color":"red"});
+     }
+     else{
+      $("#name").hide();
+      $("#fname").css("border","1px solid black");
+     }
+     if(foemail==""|| foemail=="null"){
+      $("#email").html("please enter the mail");
+    $("#email").css("color","red");
+    $("#mail").css({ "border":"1px solid red","color":"red"});
+     }
+     else{
+      $("#email").hide();
+       $("#mail").css("border","1px solid black");
+     }
+     if(fopass1==""|| fopass1=="null"){
+      $("#pass1").html("please enter the password");
+    $("#pass1").css("color","red");
+    $("#pass").css({ "border":"1px solid red","color":"red"});
+     }
+     else{
+      $("#pass1").hide();
+       $("#pass").css("border","1px solid black");
+     }
+     if(fopass2==""|| fopass2=="null"){
+      $("#pass2").html("please confirm the password");
+    $("#pass2").css("color","red");
+    $("#repass").css({ "border":"1px solid red","color":"red"});
+     }
+     else{
+      $("#pass2").hide();
+      $("#repass").css("border","1px solid black");
+     }
+});
+
+   
+     $("#repass").keyup(function(){
+        checkconfirm();
+     });
+      
+     
+      function checkconfirm(){
+       
+       var fopass1=$("#pass").val();
+      
+     var fopass2=$("#repass").val();
+     if(fopass1!=fopass2){
+      $("#pass2").html("Oops! password didn't match");
+      $("#pass2").css("color","red");
+      
+          }
+      else{
+        $("#pass2").hide();
+      }
+    }
+
+     
+
+    
+
+});
+
+
+   
+   
+
+
+		
+	</script>
+</head>
+<body>
+	<h1>Welcome to login page....</h1>
+	<form>
+		Enter the name:
+		<input type="text" name=""id="fname"maxlength="3" required>
+		<p id="name"></p>
+		<br>
+		Enter the email:
+		<input type="email" name="" id="mail"  pattern="[a-zA-Z]{3,}[1-100]{5,}@{1}[a-z]{3,}.{1}[a-z]{2,}"required>
+		<p id="email"></p>
+		<br>
+		Enter the password:
+		<input type="password" id="pass" maxlength="8" required>
+		<p id="pass1"></p>
+		<br>
+		Confirm password:
+		<input type="password" name="" maxlength="8" id="repass"for="cpass"required  >
+		<p id="pass2"></p>
+		<br>
+		<input type="submit" name="" value="submit" id="btn" >
+	</form>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<style type="text/css">
+		.scrolltop{
+			height:50px;
+			width:70px;
+			background: red;
+			display:none;
+			border:none;
+			color:white;
+			right:20px;
+			bottom:20px;
+			position:fixed;
+			cursor:pointer;
+		}
+		.scrolltop:hover{
+			background: blue;
+			color:white;
+		}
+
+ 
+
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			
+			$(window).scroll(function(){
+				if($(this).scrollTop()>100){
+					$(".scrolltop").fadeIn();
+				}
+				else{
+					$(".scrolltop").fadeOut();	
+				}
+			});
+			$(".scrolltop").click(function() {
+	           	$('html, body').animate({
+	                scrollTop: 0
+	            }, 800);
+               return false;
+  			});
+		});
+	</script>
+</head>
+<body>
+	<h1>scroll to top functionality.....</h1>
+	<p id="para1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <img src="smile.jpg" height="600" width="700">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <img src="sky.jpg"height="500" width="700">
+   <button class="scrolltop">TOP</button>
+</body>
+</html>

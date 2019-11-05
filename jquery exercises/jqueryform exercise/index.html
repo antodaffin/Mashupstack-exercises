@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/jquery.validate.js"></script>
+  
+	<script type="text/javascript">
+   $(document).ready(function(){
+      $.validator.setDefaults({
+         submitHandler:function(){
+           alert("submitted");
+        }
+      });
+
+     $("#myform").validate({
+      rules:{
+         uname:{
+          required:true,
+          minlength:3
+          
+         } ,
+         mail:{
+          required:true,
+          email:true
+         },
+         upass:{
+          required:true,
+          minlength:8
+         },
+         
+       urepass:{
+        required:true,
+         minlength:8,
+         equalTo:"#upass"
+       }
+      },
+      messages:{
+        uname:{
+        
+          required:"please enter the name",
+          minlength:"please enter 3 characers only"
+        },
+         mail:{
+          required:"please enter the email Id",
+          email:"please enter a valid email Id"
+        },
+        upass:{
+          required:"please enter the password",
+          minlength:"please enter 8 characters only"
+        },
+         urepass:{
+          required:"please confirm the password",
+          minlength:"please enter 8 characters only",
+          equalTo:"password didn't matching...."
+        }
+
+      }
+
+  });
+     
+     
+
+     // $("#myform").validate({
+     //  rules:{
+     //    name:"required",
+     //    mail:"required",
+     //  },
+     //  messages:{
+     //      name:"please enter the name",
+     //      mail:"please enter the mail",
+     //  }
+     // });
+
+});
+
+   
+   
+
+
+		
+	</script>
+</head>
+<body>
+	<h1>Welcome to login page....</h1>
+  <h3> form validation using plugin</h3>
+	<form id="myform">
+		Enter the name:
+		<input type="text" name="uname" id="uname" >
+		 <br>
+		<br>
+		Enter the email:
+		<input type="email" name="mail" id="mail"  >
+		<br>
+		<br>
+		Enter the password:
+		<input type="password" id="upass" name="upass">
+		<br>
+		<br>
+		Confirm password:
+		<input type="password"  id="urepass" name="urepass">
+		<br>
+		<br>
+		<input type="submit" name="" value="submit" id="btn" >
+	</form>
+
+ 
+</body>
+</html>

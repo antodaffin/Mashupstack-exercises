@@ -1,0 +1,17 @@
+h1 {
+    text-align: center;
+    color: red;
+    font-weight:bold;
+}
+ 
+h2 {
+    text-align: center;
+    color: red;
+   
+}
+ 
+p {
+    text-align: center;
+    color: red;
+    text-decoration:line-through;
+}

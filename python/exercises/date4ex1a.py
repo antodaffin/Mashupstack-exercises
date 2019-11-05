@@ -1,0 +1,12 @@
+import datetime
+x=datetime.datetime.now()
+print("current date is:", x.date())
+print("current time is:", x.time())
+print("current year is :", x.year)
+print("current month is :", x.strftime("%B"))
+print("month is :", x.month)
+print("weak number of the year:", x.strftime("%U"))
+#print("weak number of the year:", x.strftime("%W"))
+print("day of month is:", x.strftime("%d"))
+print("day is:", x.strftime("%A"))
+print("day of week :", x.strftime("%w"))

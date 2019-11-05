@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		
+		input[type="text"]{
+			height:50px;
+			width:300px;
+		}button{
+		
+			border:none;
+			height:40px;
+			width:60px;
+		}
+		.strike{
+			text-decoration: line-through;
+		}
+		li{
+			list-style:none;
+		}
+		p{
+			color:red;
+			font-size: 30px;
+		}
+	</style>
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+           $("#btnadd").click(function(){
+          var inputtext=$("#intext").val();
+          $('ol').append("<li>"+"<input type='checkbox'>"+ inputtext+"</li>");
+          });
+           $(document).on('dblclick','li', function(){
+            $ (this).toggleClass('strike').fadeOut('2000');
+           });
+           
+ 
+          
+           
+		});
+	</script>
+</head>
+<body>
+	<h1>todo list..</h1>
+	<div>
+		<p> double click the list to delete...</p>
+		<label>add item:</label>
+		<input type="text" name="" id="intext" placeholder="enter the text to add..">
+		<button id="btnadd">add</button>
+		<ol></ol>
+       </div>  
+		
+	
+
+</body>
+</html>
